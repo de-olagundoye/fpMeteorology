@@ -1,0 +1,39 @@
+[
+  {
+    "username": "lindseypengelly",
+    "email": "lindsey@fpmeteor.com",
+    "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7",
+    "fpme_profile": "http://www.freepeople.com/profile/Lindseypengelly/",
+    "looks": [
+      {"img_src": "img/fp/1.jpg", "weather": "Mild", "occasion": "Work", "fp_link": "http://www.freepeople.com/profile/Lindseypengelly/pics/style-pic-197/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/2.jpg", "weather": "Warm", "occasion": "Special/Wedding", "fp_link": "http://www.freepeople.com/profile/Lindseypengelly/pics/style-pic-164/", "fp_girl": "Candy"},
+      {"img_src": "img/fp/3.jpg", "weather": "Mild", "occasion": "Special/Wedding", "fp_link": "http://www.freepeople.com/profile/Lindseypengelly/pics/style-pic-125/", "fp_girl": "Meadow"},
+      {"img_src": "img/fp/4.jpg", "weather": "Hot", "occasion": "Hang Out", "fp_link": "http://www.freepeople.com/profile/Lindseypengelly/pics/style-pic-37/", "fp_girl": "Meadow"},
+      {"img_src": "img/fp/5.jpg", "weather": "Warm", "occasion": "Date Night", "fp_link": "http://www.freepeople.com/profile/Lindseypengelly/pics/style-pic-102/", "fp_girl": "Candy"}
+    ]
+  },
+  {
+    "username": "kaciecone",
+    "email": "kaciecone@fpmeteor.com",
+    "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7",
+    "looks": [
+      {"img_src": "img/fp/6.jpg", "weather": "Cold", "occasion": "Date Night", "fp_link": "http://www.freepeople.com/profile/kaciecone/pics/style-pic-165/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/7.jpg", "weather": "Cold", "occasion": "Special/Wedding", "fp_link": "http://www.freepeople.com/profile/kaciecone/pics/style-pic-147/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/8.jpg", "weather": "Mild", "occasion": "Hang Out", "fp_link": "http://www.freepeople.com/profile/kaciecone/pics/style-pic-116/", "fp_girl": "Meadow"},
+      {"img_src": "img/fp/9.jpg", "weather": "Mild", "occasion": "Work", "fp_link": "http://www.freepeople.com/profile/kaciecone/pics/style-pic-114/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/10.jpeg", "weather": "Mild", "occasion": "Special/Wedding", "fp_link": "http://www.freepeople.com/profile/kaciecone/pics/style-pic-87/", "fp_girl": "Ginger"}
+    ]
+  },
+  {
+    "username": "katiepossage",
+    "email": "katiepossage@fpmeteor.com",
+    "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7",
+    "looks": [
+      {"img_src": "img/fp/11.jpg", "weather": "Cold", "occasion": "Hang Out", "fp_link": "http://www.freepeople.com/profile/katiepossage/pics/style-pic-216/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/12.jpg", "weather": "Freezing", "occasion": "Work", "fp_link": "http://www.freepeople.com/profile/katiepossage/pics/style-pic-205/", "fp_girl": "Lou"},
+      {"img_src": "img/fp/13.jpg", "weather": "Freezing", "occasion": "Work", "fp_link": "http://www.freepeople.com/profile/katiepossage/pics/style-pic-186/", "fp_girl": "Ginger"},
+      {"img_src": "img/fp/14.jpg", "weather": "Cold", "occasion": "Date Night", "fp_link": "http://www.freepeople.com/profile/katiepossage/pics/style-pic-118/", "fp_girl": "Ginger"},
+      {"img_src": "img/fp/15.jpg", "weather": "Mild", "occasion": "Hang Out", "fp_link": "http://www.freepeople.com/profile/katiepossage/pics/style-pic-104/", "fp_girl": "Ginger"}
+    ]
+  }
+]

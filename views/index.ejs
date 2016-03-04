@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="fpMeteorology">
+<head>
+  <title>fpMeteorology</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" href="pure_drawer/dist/css/pure-drawer.css"/>
+  <link rel="stylesheet" href="pure_drawer/dist/scss/pure-drawer.scss"/>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/looks_controller.js"></script>
+</head>
+
+<div class="pure-container" data-effect="pure-effect-reveal"> 
+  <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left"> 
+  <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left"> 
+    <span class="pure-toggle-icon"></span> 
+  </label> 
+
+  <div class="pure-drawer" data-position="left">
+    <p>Links Will be Here</p>
+  </div>
+
+  <div class="pure-pusher-container">
+    <div class="pure-pusher">
+      <body>
+        <div class="header">
+          <img id="logo" src="img/logo.png" class="user-select">
+        </div>
+
+        <div ng-controller="LooksController" class="wrapper masonry">
+
+          <div ng-repeat="user in users | orderBy:random">
+            <div ng-repeat="looks in user.looks | orderBy:random">
+              <img src="{{looks.img_src}}" class="lookThumb">
+           </div>
+          </div>
+        </div>
+
+      </body>
+    </div>
+  </div>
+  <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
+</div>
+</html>
