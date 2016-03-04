@@ -3,26 +3,18 @@ angular.module('fpMeteorology').controller('LooksController', LooksController);
 function LooksController($scope, $http){
   $http.get('/looks.json').success(function(response){
     $scope.users = response
-    console.log($scope.users)
 
     $scope.random = function(){
-      return 0.5 - Math.random();
+      return Math.random();
     };
   });
 
-  $scope.showImages = function(){
-    $scope.all.forEach(function(user){
-      user.looks.forEach(function(response){
-        $scope.looks = response
-        console.log(response)
-      })
-    })
+  $scope.show = function(response){
+    document.getElementById("modal").style.visibility = "visible";
+    $scope.thisLook = response
   }
 
-  // $scope.all.forEach(function(user){
-  //     user.looks.forEach(function(response){
-  //       $scope.looks = response;
-  //       console.log($scope.looks.img_src)
-  //     });
-  //   });
+  $scope.close = function(){
+    document.getElementById("modal").style.visibility = "hidden";
+  }
 }

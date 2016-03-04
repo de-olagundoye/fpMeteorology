@@ -1,6 +1,8 @@
 body {
+  height: 100%;
   font: 1em/1.67 'Open Sans', Arial, Sans-serif;
   margin: 0;
+  padding:0;
 }
 
 img {
@@ -31,23 +33,57 @@ img {
   column-gap: 10px; 
 }
 
-.lookThumb{
+.lookThumb {
   width: 100% !important;
   height: auto !important;
-/*  display: inline-block;
-  background: #fff;
-  padding: 1em;
-  margin: 0 0 0em;
-  width: 100%;*/
-/*  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;*/
 }
 
 #logo {
   display: block;
   margin: 0 auto;
   width: 700px;
+}
+
+#modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  text-align:center;
+  z-index: 99999; 
+  background: rgba(0,0,0,0.2);
+}
+
+#modal div {
+  width: 800px;
+  position: relative;
+  display: inline-block;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 2px;
+  background: #fff;
+  text-align: left;
+}
+
+#modal img {
+  float: left;
+  height: 400px;
+  background: #fff;
+  padding: 1em;
+  margin: 0 0 0em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+#modal ul {
+  display: inline-block;
+  padding: 25px;
 }
 
 @media (max-width: 1200px) {

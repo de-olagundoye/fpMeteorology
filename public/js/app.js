@@ -1,1 +1,1 @@
-angular.module('fpMeteorology', []);
+var app = angular.module('fpMeteorology', []);
