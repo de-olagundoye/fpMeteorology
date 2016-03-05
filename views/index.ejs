@@ -33,6 +33,16 @@
         </div>
 
         <div ng-controller="LooksController" class="wrapper">
+
+         <select ng-model="query" ng-options="user.email for user in users"></select>
+
+        <label>Occasion: <input type="checkbox" ng-model="query"></label> 
+        <label>Weather: <input type="checkbox" ng-model="query"></label>
+        <label>Who Are You Inspired By Today?: <input type="checkbox" ng-model="search.phone"></label>
+        <hr>
+
+
+
           <div class="masonry">
             <div ng-repeat="user in users | limitTo:10">
               <div ng-repeat="look in user.looks | limitTo:5">
@@ -43,13 +53,19 @@
 
           <div id="modal">
             <div>
-              <p ng-if="thisLook.img_src">[<a href='#' ng-click='close()'>x</a>]</p>
-              <img src="{{thisLook.img_src}}">             
+              <p ><a href='#' class="close" ng-if="thisLook.img_src" ng-click='close()'>X</a></p>
+              <span id="modalImage">
+              <img src="{{thisLook.img_src}}">   
+              </span>
+              <span id="modalText">         
               <ul style="list-style-type:none">
-                <li>Occasion: {{thisLook.occasion}}</li>
-                <li>Weather: {{thisLook.weather}}</li>
-                <li>Inspired By: {{thisLook.fp_girl}}</li>
-              </ul>            
+                <li><strong>Occasion: </strong> {{thisLook.occasion}}</li>
+                <li><strong>Weather: </strong> {{thisLook.weather}}</li>
+                <li><strong>Inspired By: </strong> {{thisLook.fp_girl}}</li>
+                <br>
+                <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
+              </ul> 
+              </span>           
             </div>
           </div>
         </div>

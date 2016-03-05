@@ -1,6 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(https://fonts.googleapis.com/css?family=Lato:100);
+
 body {
   height: 100%;
-  font: 1em/1.67 'Open Sans', Arial, Sans-serif;
+  font: 1em/1.67 'Lato', sans-serif;
   margin: 0;
   padding:0;
 }
@@ -12,6 +15,10 @@ img {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .header {
@@ -38,6 +45,21 @@ img {
   height: auto !important;
 }
 
+.close {
+  color: #FC379B;
+  line-height: 25px;
+  position: absolute;
+  right: -30px;
+  text-align: center;
+  font-weight: bold;
+  top: -30px;
+  width: 24px;
+}
+
+.close:hover { 
+  color: #F9D730; 
+}
+
 #logo {
   display: block;
   margin: 0 auto;
@@ -55,17 +77,17 @@ img {
   height:100%;
   text-align:center;
   z-index: 99999; 
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.7);
 }
 
 #modal div {
-  width: 800px;
+  min-width: 700px;
   position: relative;
   display: inline-block;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
   border-radius: 2px;
-  background: #fff;
+  background: rgba(255,255,255,0.9);
   text-align: left;
 }
 
@@ -75,15 +97,16 @@ img {
   background: #fff;
   padding: 1em;
   margin: 0 0 0em;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-shadow: 2px 2px 4px 0 #ccc;
 }
 
-#modal ul {
+#modal strong {
+  font-family: 'EB Garamond', serif;
+  color: #FC379B;
+}
+
+#modalText {
   display: inline-block;
-  padding: 25px;
+  padding: 10px;
 }
 
 @media (max-width: 1200px) {
