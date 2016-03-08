@@ -13,6 +13,7 @@
 
   <script src="js/app.js"></script>
   <script src="js/looks_controller.js"></script>
+  <script src="js/selections_controller.js"></script>
 </head>
 
 <div class="pure-container" data-effect="pure-effect-reveal"> 
@@ -34,27 +35,31 @@
 
         <div ng-controller="LooksController" class="wrapper">
 
-        <select ng-model="looks.occasion" ng-options="look.occasion in user.looks for user in eachUser"></select>
+          <div ng-controller="SelectionsController">
+            <select ng-model="query.weather" ng-options="weather._id as weather.weather for weather in weathers"></select>
+            <select ng-model="query.occasion" ng-options="occasion._id as occasion.occasion for occasion in occasions"></select>
+            <select ng-model="query.girls" ng-options="girl._id as girl.name for girl in girls"></select>
 
-          <div class="masonry">
-            <div ng-repeat="user in users | limitTo:10">
-              <div ng-repeat="look in user.looks | limitTo:5">
-              <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb"></a>
-             </div>
+            <a href="" ng-click="query = {}">Start Over</a>
+
+            <div class="masonry">
+              <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.girls">
+                <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb"></a>
+              </div>
             </div>
           </div>
 
           <div id="modal">
             <div>
-              <p ><a href='#' class="close" ng-if="thisLook.img_src" ng-click='close()'>X</a></p>
+              <p><a href='#' class="close" ng-if="thisLook.img_src" ng-click='close()'>X</a></p>
               <span id="modalImage">
               <img src="{{thisLook.img_src}}">   
               </span>
               <span id="modalText">         
               <ul style="list-style-type:none">
-                <li><strong>Occasion: </strong> {{thisLook.occasion}}</li>
-                <li><strong>Weather: </strong> {{thisLook.weather}}</li>
-                <li><strong>Inspired By: </strong> {{thisLook.fp_girl}}</li>
+                <li><strong>Occasion: </strong> {{thisLook.occasion.occasion}}</li>
+                <li><strong>Weather: </strong> {{thisLook.weather.weather}}</li>
+                <li><strong>Inspired By: </strong> {{thisLook.fp_girl.name}}</li>
                 <br>
                 <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
               </ul> 

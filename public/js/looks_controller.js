@@ -1,12 +1,21 @@
 angular.module('fpMeteorology').controller('LooksController', LooksController);
 
 function LooksController($scope, $http){
-  $http.get('/looks.json').success(function(response){
-    $scope.users = response;
 
-    $scope.random = function(){
+  $http.get('/looks').success(function(response){
+    $scope.looks = response;
+
+  $scope.query = function( looks ) {
+    return function( item ) {
+      console.log();
+    };
+  };
+
+   random = function(){
       return Math.random();
     };
+
+  $scope.orderProp=random
   });
 
   $scope.show = function(response){

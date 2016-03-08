@@ -7,7 +7,7 @@ var bcrypt = require('bcrypt');
 var MongoStore = require('connect-mongo')(session);
 var methodOverride = require('method-override');
 
-// middleware setup
+// config
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -19,7 +19,11 @@ var mongoose = require('mongoose');
 var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/myDb';
 mongoose.connect(mongoUrl);
 
-var Looks = require('./db/models/looks');
+var fpGirls = require('./db/models/fp_girl');
+var Looks = require('./db/models/look');
+var Occasions = require('./db/models/occasion');
+var Users = require('./db/models/user');
+var Weather = require('./db/models/weather');
 
 app.use(session({
   secret: process.env.DE_SECRET,
@@ -28,11 +32,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
-
-
 var authenticateUser = function(email, password, callback) {
-  Admin.findOne({email: email}, function(err, data) {
+  User.findOne({email: email}, function(err, data) {
     if (err) {throw err;}
     bcrypt.compare(password, data.password_digest, function(err, passwordsMatch) {
       if (passwordsMatch) {
@@ -56,11 +57,33 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
-app.get('/looks.json', function(req, res){
-  Looks.find({}, function(err, results){
-    console.log(results);
-    res.json(results);
+app.get('/looks', function(req, res){
+  Looks.find({})
+    .populate('user')
+    .populate('weather')
+    .populate('occasion')
+    .populate('fp_girl')
+    .exec(function(error, looks) {
+    res.json(looks);
   });
 });
+
+app.get('/weather', function(req, res){
+  Weather.find({}, function(error, weather){
+    res.json(weather)
+  })
+})
+
+app.get('/occasions', function(req, res){
+  Occasions.find({}, function(error, occasions){
+    res.json(occasions)
+  })
+})
+
+app.get('/fp_girls', function(req, res){
+  fpGirls.find({}, function(error, fp_girls){
+    res.json(fp_girls)
+  })
+})
 
 app.listen(process.env.PORT || 9292);
