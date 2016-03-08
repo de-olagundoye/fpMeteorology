@@ -15,18 +15,18 @@ app.use(express.static(__dirname + '/public'));
 app.use(methodOverride('_method'));
 
 // database setup
-var mongoose = require('mongoose')
-var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/myDb'
-mongoose.connect(mongoUrl)
+var mongoose = require('mongoose');
+var mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/myDb';
+mongoose.connect(mongoUrl);
 
-var Looks = require('./db/models/looks')
+var Looks = require('./db/models/looks');
 
 app.use(session({
   secret: process.env.DE_SECRET,
   store: new MongoStore({ url: mongoUrl }),
   resave: true,
   saveUninitialized: true
-}))
+}));
 
 
 
@@ -37,12 +37,12 @@ var authenticateUser = function(email, password, callback) {
     bcrypt.compare(password, data.password_digest, function(err, passwordsMatch) {
       if (passwordsMatch) {
         callback(data);
-        console.log('authenticated')
+        console.log('authenticated');
       } else {
         callback(false);
-        console.log('NOT authenticated')
+        console.log('NOT authenticated');
       }
-    })
+    });
   });
 };
 
@@ -58,8 +58,8 @@ app.get('/', function (req, res) {
 
 app.get('/looks.json', function(req, res){
   Looks.find({}, function(err, results){
-    console.log(results)
-    res.json(results)
+    console.log(results);
+    res.json(results);
   });
 });
 
