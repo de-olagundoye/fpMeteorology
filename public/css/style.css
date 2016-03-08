@@ -32,6 +32,7 @@ a {
 }
 
 .masonry {
+  position: absolute;
   -webkit-column-count: 5;
   -webkit-column-gap: 10px;
   -moz-column-count: 5;

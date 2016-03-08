@@ -3,6 +3,7 @@
 <head>
   <title>fpMeteorology</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dropdown.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" href="pure_drawer/dist/css/pure-drawer.css"/>
   <link rel="stylesheet" href="pure_drawer/dist/scss/pure-drawer.scss"/>
@@ -36,14 +37,36 @@
         <div ng-controller="LooksController" class="wrapper">
 
           <div ng-controller="SelectionsController">
-            <select ng-model="query.weather" ng-options="weather._id as weather.weather for weather in weathers"></select>
+ <!--            <select ng-model="query.weather" ng-options="weather._id as weather.weather for weather in weathers"></select>
             <select ng-model="query.occasion" ng-options="occasion._id as occasion.occasion for occasion in occasions"></select>
-            <select ng-model="query.girls" ng-options="girl._id as girl.name for girl in girls"></select>
+            <select ng-model="query.girls" ng-options="girl._id as girl.name for girl in girls"></select> -->
 
+        <div class="queries">
+          <ul id="drop-down">
+            <li>
+              <a href="">Weather</a>
+              <ul ng-repeat="weather in weathers">
+                <li ng-model="query.weather"><a href="" ng-click="query.weather=weather._id">{{weather.weather}}</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">Occasion</a>
+              <ul ng-repeat="occasion in occasions">
+                <li ng-model="query.occasion"><a href="" ng-click="query.occasion=occasion._id">{{occasion.occasion}}</a></li>
+              </ul>  
+            </li>    
+            <li>
+              <a href="">FP Girl</a>
+              <ul ng-repeat="girl in girls">
+                <li ng-model="query.girl"><a href="" ng-click="query.girl=girl._id">{{girl.name}}</a></li>
+              </ul>
+            </li>
             <a href="" ng-click="query = {}">Start Over</a>
+          </ul>
+        </div>
 
             <div class="masonry">
-              <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.girls">
+              <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.girl">
                 <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb"></a>
               </div>
             </div>
