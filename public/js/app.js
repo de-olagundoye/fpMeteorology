@@ -1,6 +1,6 @@
 var app = angular.module('fpMeteorology', []);
 
-$(document).ready(function () {
+$(document).ready(function() {
   $('#drop-down li').hover(
   function () {
       //show submenu

@@ -23,12 +23,16 @@ a {
 
 .header {
   display: block;
-  margin: 3em auto;
+  padding-top: 50px;
+  margin: 0 auto;
 }
 
 .wrapper{
+  position: relative;
+  display: block;
+  margin: 0 auto;
   max-width: 800px;
-  margin: 3em auto;
+  
 }
 
 .masonry {
