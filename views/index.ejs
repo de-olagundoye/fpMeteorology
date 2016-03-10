@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="fpMeteorology">
+
 <head>
   <title>fpMeteorology</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/dropdown.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
-  <link rel="stylesheet" href="pure_drawer/dist/css/pure-drawer.css"/>
-  <link rel="stylesheet" href="pure_drawer/dist/scss/pure-drawer.scss"/>
+  <link rel="stylesheet" href="pure_drawer/dist/css/pure-drawer.css" />
+  <link rel="stylesheet" href="pure_drawer/dist/scss/pure-drawer.scss" />
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -17,74 +18,93 @@
   <script src="js/selections_controller.js"></script>
 </head>
 
-<div class="pure-container" data-effect="pure-effect-reveal"> 
-  <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left"> 
-  <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left"> 
-    <span class="pure-toggle-icon"></span> 
-  </label> 
+<div class="pure-container" data-effect="pure-effect-reveal">
+  <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
+  <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
+    <span class="pure-toggle-icon"></span>
+  </label>
 
   <div class="pure-drawer" data-position="left">
-    <p>Links Will be Here</p>
+    <div ng-model="page">
+      <a href="#" ng-click="page='intro'">What is FPMeteorology?</a>
+      <a href="#" ng-click="page='fpGirls'">Who Are the Free People Girls?</a>
+      <a href="#" ng-click="page='planner'">FPMeteorology Stylist</a>
+    </div>
   </div>
 
   <div class="pure-pusher-container">
     <div class="pure-pusher">
+
       <body>
         <div class="header">
           <img id="logo" src="img/logo.png" class="user-select">
         </div>
+        <div ng-switch on='page' class="wrapper">
+          <div ng-switch-when="intro">Hi</div>
+          <div ng-switch-default>
+            <div ng-controller="LooksController">
 
-        <div ng-controller="LooksController" class="wrapper">
+              <div ng-controller="SelectionsController">
 
-          <div ng-controller="SelectionsController">
-
-            <div class="queries">
-              <ul id="drop-down">
-                <li id="drop-down-weather">
-                  <a href="" class="selectedWeather selectOption">Weather</a>
-                  <ul ng-repeat="weather in weathers">
-                    <li ng-model="query.weather"><a href="" ng-click="query.weather=weather._id">{{weather.weather}}</a></li>
+                <div class="queries">
+                  <ul id="drop-down">
+                    <li id="drop-down-weather">
+                      <a href="" class="selectedWeather selectOption">Weather</a>
+                      <ul ng-repeat="weather in weathers">
+                        <li ng-model="query.weather"><a href="" ng-click="query.weather=weather._id">{{weather.weather}}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li id="drop-down-occasion">
+                      <a href="" class="selectedOccasion selectOption">Occasion</a>
+                      <ul ng-repeat="occasion in occasions">
+                        <li ng-model="query.occasion"><a href="" ng-click="query.occasion=occasion._id">{{occasion.occasion}}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li id="drop-down-girl">
+                      <a href="" class="selectedGirl selectOption">FP Style</a>
+                      <ul ng-repeat="girl in girls">
+                        <li ng-model="query.style"><a href="" ng-click="query.style=girl._id">{{girl.style}}</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a href="" id="reset-button" ng-click="query = {}">Start Over</a>
+                    </li>
                   </ul>
-                </li>
-                <li id="drop-down-occasion">
-                  <a href="" class="selectedOccasion selectOption">Occasion</a>
-                  <ul ng-repeat="occasion in occasions">
-                    <li ng-model="query.occasion"><a href="" ng-click="query.occasion=occasion._id">{{occasion.occasion}}</a></li>
-                  </ul>  
-                </li>    
-                <li id="drop-down-girl">
-                  <a href="" class="selectedGirl selectOption">FP Girl</a>
-                  <ul ng-repeat="girl in girls">
-                    <li ng-model="query.girl"><a href="" ng-click="query.girl=girl._id">{{girl.name}}</a></li>
-                  </ul>
-                </li>
-                <li><a href="" id="reset-button" ng-click="query = {}">Start Over</a></li>
-              </ul>
-            </div>
+                </div>
 
-            <div class="masonry">
-              <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.girl">
-                <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb"></a>
+                <div class="masonry">
+                  <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.style">
+                    <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id="modal">
+                <div>
+                  <p><a href='#' class="close" ng-if="thisLook.img_src" ng-click='close()'>X</a>
+                  </p>
+                  <span id="modalImage">
+                <img src="{{thisLook.img_src}}">   
+                </span>
+                  <span id="modalText">         
+                <ul style="list-style-type:none">
+                  <li><strong>Occasion: </strong> {{thisLook.occasion.occasion}}</li>
+                  <li><strong>Weather: </strong> {{thisLook.weather.weather}}</li>
+                  <li><strong>Inspired By: </strong> {{thisLook.fp_girl.name}}</li>
+                  <br>
+                  <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
+                </ul> 
+                </span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div id="modal">
-            <div>
-              <p><a href='#' class="close" ng-if="thisLook.img_src" ng-click='close()'>X</a></p>
-              <span id="modalImage">
-              <img src="{{thisLook.img_src}}">   
-              </span>
-              <span id="modalText">         
-              <ul style="list-style-type:none">
-                <li><strong>Occasion: </strong> {{thisLook.occasion.occasion}}</li>
-                <li><strong>Weather: </strong> {{thisLook.weather.weather}}</li>
-                <li><strong>Inspired By: </strong> {{thisLook.fp_girl.name}}</li>
-                <br>
-                <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
-              </ul> 
-              </span>           
-            </div>
+          <div ng-switch-when="fpGirls">
+            <h1>Who Are the Free People Girls?</h1>
           </div>
         </div>
       </body>
@@ -92,4 +112,5 @@
   </div>
   <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
 </div>
+
 </html>

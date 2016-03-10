@@ -29,7 +29,7 @@ function SelectionsController($scope, $http){
     $("#reset-button").on('click', function(){
       $(".selectedWeather:first-child").text(("Weather"));
       $(".selectedOccasion:first-child").text(("Occasion"));
-      $(".selectedGirl:first-child").text(("FP Girl"));
+      $(".selectedGirl:first-child").text(("FP Style"));
     })
   });
 }
