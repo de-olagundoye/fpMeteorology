@@ -5,6 +5,7 @@
   <title>fpMeteorology</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/dropdown.css">
+  <link rel="stylesheet" href="css/drawer_override.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <link rel="stylesheet" href="pure_drawer/dist/css/pure-drawer.css" />
   <link rel="stylesheet" href="pure_drawer/dist/scss/pure-drawer.scss" />
@@ -26,11 +27,11 @@
   </label>
 
   <div class="pure-drawer" data-position="left">
-    <div ng-model="page">
-      <a href="" ng-click="page='intro'">What is fpMeteorology?</a>
-      <a href="" ng-click="page='fpGirls'">Who Are the Free People Girls?</a>
-      <a href="" ng-click="page='planner'">fpMeteorology Stylist</a>
-    </div>
+    <ul class="nav" ng-model="page" >
+      <li><a href="" ng-click="page='intro'">What is fpMeteorology?</a></li>
+      <li><a href="" ng-click="page='fpGirls'">Who Are the Free People Girls?</a></li>
+      <li><a href="" ng-click="page='planner'">fpMeteorology Stylist</a></li>
+    </ul>
   </div>
 
   <div class="pure-pusher-container">
@@ -85,23 +86,24 @@
                   </div>
                 </div>
               </div>
-
-              <div id="modal">
-                <div>
-                  <p><a href="" class="close" ng-if="thisLook.img_src" ng-click="close()">X</a>
-                  </p>
-                  <span id="modalImage">
-                <img src="{{thisLook.img_src}}">   
-                </span>
-                  <span id="modalText">         
-                <ul style="list-style-type:none">
-                  <li><strong>Occasion: </strong> {{thisLook.occasion.occasion}}</li>
-                  <li><strong>Weather: </strong> {{thisLook.weather.weather}}</li>
-                  <li><strong>Inspired By: </strong> {{thisLook.fp_girl.name}}</li>
-                  <br>
-                  <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
-                </ul> 
-                </span>
+              <div id="modal-container" ng-click="close()">
+                <div id="modal">
+                  <div>
+                    <p><a href="" class="close" ng-if="thisLook.img_src" ng-click="close()">X</a>
+                    </p>
+                    <span id="modalImage">
+                  <img src="{{thisLook.img_src}}">   
+                  </span>
+                    <span id="modalText">         
+                  <ul style="list-style-type:none">
+                    <li><strong>Occasion: </strong> {{thisLook.occasion.occasion}}</li>
+                    <li><strong>Weather: </strong> {{thisLook.weather.weather}}</li>
+                    <li><strong>Inspired By: </strong> {{thisLook.fp_girl.name}}</li>
+                    <br>
+                    <li><a href="{{thisLook.fp_link}}" target="_blank"><strong>Click Here to Shop This Look!</strong></a>
+                  </ul> 
+                  </span>
+                  </div>
                 </div>
               </div>
             </div>

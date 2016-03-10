@@ -62,8 +62,6 @@ body {
   height: 70px;
   -webkit-transition: all 400ms ease-in-out;
           transition: all 400ms ease-in-out;
-  border: 2px solid #F9D730;
-  border-radius: 50%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -73,14 +71,13 @@ body {
 }
 
 .pure-toggle-label:hover {
-  border-color: #1fc08e;
-  color: #1fc08e;
+  color: #FC379B;
 }
 
 .pure-toggle-label:hover .pure-toggle-icon,
 .pure-toggle-label:hover .pure-toggle-icon:before,
 .pure-toggle-label:hover .pure-toggle-icon:after {
-  background-color: #1fc08e;
+  background-color: #FFA500;
 }
 
 .pure-toggle-label:active {

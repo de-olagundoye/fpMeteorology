@@ -1,0 +1,27 @@
+/*Overries for Drawer Library*/
+
+.nav {
+  margin: 9;
+  padding: 100px 0 0 0;
+}
+
+.nav li a {
+  display: block;
+  color: #f0f0f0;
+  padding: 10px 15px;
+  font-weight: bolder;
+}
+
+.nav li a:hover {
+  background-color: orange;
+}
+
+.nav ul {
+  list-style: none;
+  margin-left: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  list-style-position: outside;
+  padding: 0 0 0 40px;
+}

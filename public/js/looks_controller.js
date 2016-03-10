@@ -5,25 +5,19 @@ function LooksController($scope, $http){
   $http.get('/looks').success(function(response){
     $scope.looks = response;
 
-  $scope.query = function( looks ) {
-    return function( item ) {
-      console.log();
+    $scope.query = function(looks) {
+      return function(item) {
+      };
     };
-  };
-
-   random = function(){
-      return Math.random();
-    };
-
-  $scope.orderProp=random
   });
 
   $scope.show = function(response){
     document.getElementById("modal").style.visibility = "visible";
-    $scope.thisLook = response;
+    $scope.thisLook = response; 
   };
 
   $scope.close = function(){
     document.getElementById("modal").style.visibility = "hidden";
-  };
+  }; 
+
 }
