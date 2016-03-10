@@ -27,9 +27,9 @@
 
   <div class="pure-drawer" data-position="left">
     <div ng-model="page">
-      <a href="" ng-click="page='intro'">What is FPMeteorology?</a>
+      <a href="" ng-click="page='intro'">What is fpMeteorology?</a>
       <a href="" ng-click="page='fpGirls'">Who Are the Free People Girls?</a>
-      <a href="" ng-click="page='planner'">FPMeteorology Stylist</a>
+      <a href="" ng-click="page='planner'">fpMeteorology Stylist</a>
     </div>
   </div>
 
@@ -41,7 +41,10 @@
           <a href="/"><img id="logo" src="img/logo.png" class="user-select"></a>
         </div>
         <div ng-switch on='page' class="wrapper">
-          <div ng-switch-when="intro">Hi</div>
+          <div ng-switch-when="intro">
+            <h1>What is fpMeteorology?</h1>
+            <p ng-model="page">fpMeteorology was designed to help fpMe users take their inspiration seeking and sharing one step further. With looks categorized by weather, occasion, and personal style, the most loyal Free People girls can now be prepared as well as inspired - rain or shine.</p>
+          </div>
           <div ng-switch-default>
             <div ng-controller="LooksController">
 
@@ -113,6 +116,7 @@
                 </ul>
 
                 <div id="fpGirlDetail">
+                  <p ng-if="!clickGirl.name">Click A Name to Find Out!</p>
                   <h2>{{clickGirl.name}}</h2>
                   <h3>{{clickGirl.tag_line}}</h3>
                   <img src="{{clickGirl.img_src}}">

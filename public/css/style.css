@@ -133,6 +133,10 @@
     list-style: none;
   }
 
+  #fpGirls ul:hover {
+    color: black;
+  }
+
 /*Media Settings for Style Planner Page*/
   @media (max-width: 1200px) {
     .masonry {
