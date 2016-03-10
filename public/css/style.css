@@ -1,144 +1,164 @@
-@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
-@import url(https://fonts.googleapis.com/css?family=Lato:100);
+/*Global Elements*/
+  @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+  @import url(https://fonts.googleapis.com/css?family=Lato:100);
 
-body {
-  height: 100%;
-  font: 1em/1.67 'Lato', sans-serif;
-  margin: 0;
-  padding:0;
-}
-
-img {
-  user-drag: none; 
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.header {
-  display: block;
-  padding-top: 50px;
-  margin: 0 auto;
-}
-
-.wrapper{
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  max-width: 800px;
-  
-}
-
-.masonry {
-  position: absolute;
-  -webkit-column-count: 5;
-  -webkit-column-gap: 10px;
-  -moz-column-count: 5;
-  -moz-column-gap: 10px;
-  column-count: 5;
-  column-gap: 10px; 
-}
-
-.lookThumb {
-  width: 100% !important;
-  height: auto !important;
-}
-
-.close {
-  color: #FC379B;
-  line-height: 25px;
-  position: absolute;
-  right: -30px;
-  text-align: center;
-  font-weight: bold;
-  top: -30px;
-  width: 24px;
-}
-
-.close:hover { 
-  color: #F9D730; 
-}
-
-#logo {
-  display: block;
-  margin: 0 auto;
-  width: 700px;
-}
-
-#modal {
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width:100%;
-  height:100%;
-  text-align:center;
-  z-index: 99999; 
-  background: rgba(0,0,0,0.7);
-}
-
-#modal div {
-  min-width: 700px;
-  position: relative;
-  display: inline-block;
-  margin: 10% auto;
-  padding: 5px 20px 13px 20px;
-  border-radius: 2px;
-  background: rgba(255,255,255,0.9);
-  text-align: left;
-}
-
-#modal img {
-  float: left;
-  height: 400px;
-  background: #fff;
-  padding: 1em;
-  margin: 0 0 0em;
-}
-
-#modal strong {
-  font-family: 'EB Garamond', serif;
-  color: #FC379B;
-}
-
-#modalText {
-  display: inline-block;
-  padding: 10px;
-}
-
-@media (max-width: 1200px) {
-  .masonry {
-  -moz-column-count: 4;
-  -webkit-column-count: 4;
-  column-count: 4;
+  body {
+    height: 100%;
+    font: 1em/1.67 'Lato', sans-serif;
+    margin: 0;
+    padding:0;
   }
-}
-@media (max-width: 1000px) {
-  .masonry {
-  -moz-column-count: 3;
-  -webkit-column-count: 3;
-  column-count: 3;
+
+  img {
+    user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
-}
-@media (max-width: 800px) {
-  .masonry {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
+
+  a {
+    text-decoration: none;
   }
-}
-@media (max-width: 400px) {
-  .masonry {
-  -moz-column-count: 1;
-  -webkit-column-count: 1;
-  column-count: 1;
+
+  h1 {
+    text-align: center
   }
-}
+
+  strong {
+    font-family: 'EB Garamond', serif;
+    color: #FC379B;
+  }
+
+  .header {
+    display: block;
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+
+  .wrapper{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+    
+  }
+
+  #logo {
+    display: block;
+    margin: 0 auto;
+    width: 700px;
+  }
+
+/*Style Planner Page*/
+  .masonry {
+    position: absolute;
+    -webkit-column-count: 5;
+    -webkit-column-gap: 10px;
+    -moz-column-count: 5;
+    -moz-column-gap: 10px;
+    column-count: 5;
+    column-gap: 10px; 
+  }
+
+  .lookThumb {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+/*Style Planner Modal*/
+  .close {
+    color: #FC379B;
+    line-height: 25px;
+    position: absolute;
+    right: -30px;
+    text-align: center;
+    font-weight: bold;
+    top: -30px;
+    width: 24px;
+  }
+
+  .close:hover { 
+    color: #F9D730; 
+  }
+
+  #modal {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 99999; 
+    background: rgba(0,0,0,0.7);
+  }
+
+  #modal div {
+    min-width: 700px;
+    position: relative;
+    display: inline-block;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.9);
+    text-align: left;
+  }
+
+  #modal img {
+    float: left;
+    height: 400px;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 0em;
+  }
+
+  #modalText {
+    display: inline-block;
+    padding: 10px;
+  }
+
+/*FP  Girls Info Page*/
+  #fpGirls {
+    text-align: center;
+  }
+
+  #fpGirls  ul {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 0;
+    list-style: none;
+  }
+
+/*Media Settings for Style Planner Page*/
+  @media (max-width: 1200px) {
+    .masonry {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    }
+  }
+  @media (max-width: 1000px) {
+    .masonry {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    }
+  }
+  @media (max-width: 800px) {
+    .masonry {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    }
+  }
+  @media (max-width: 400px) {
+    .masonry {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    }
+  }

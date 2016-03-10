@@ -1,90 +1,96 @@
-.queries {
-  font-family: 'EB Garamond', serif;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 50px;
-  font-size: 12px;
-  text-align: center;
-}
+/*Parent Div*/
+  .queries {
+    font-family: 'EB Garamond', serif;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    font-size: 12px;
+    text-align: center;
+  }
 
-#reset-button,
-#reset-button:hover {
-  color: #F9D730!important;
-  text-decoration: none !important;
-}
+/*Reset Button*/
+  #reset-button,
+  #reset-button:hover {
+    color: #F9D730!important;
+    text-decoration: none !important;
+  }
 
-#drop-down {
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-}
+/*Dropdown Menus*/
+  #drop-down {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
 
-#drop-down li {
-  float: left;
-  position: relative;
-  margin: 0 10px;
-  width: 80px;
-}
+/*Titles*/
+  #drop-down li {
+    float: left;
+    position: relative;
+    margin: 0 10px;
+    width: 80px;
+  }
 
-.selectOption:after {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 90%;
-    right: 50%;
-    margin-top: 1px;
-    border-width: 3px 3px 0 3px;
-    border-style: solid;
-    border-color: #000000 transparent;
-}
+  #drop-down li a {
+    font-weight: 500;
+    white-space: nowrap; 
+    display: block;
+    padding: 6px 5px 0 5px;
+    height: 20px;
+    text-decoration: none;
+  }
 
-#drop-down li a {
-  white-space: nowrap; 
-  display: block;
-  padding: 6px 5px 0 5px;
-  font-weight: 500;
-  height: 20px;
-  text-decoration: none;
-}
+  #drop-down li a:hover {
+    text-decoration: underline;
+  }
 
-#drop-down li a:hover {
-  text-decoration: underline;
-}
+  #drop-down li a:visited {
+    color: #000000;
+  }
 
-#drop-down li a:visited {
-  color: #000000;
-}
+/*Dropdown Children*/
+  #drop-down ul {
+    display: none;
+    margin: 0 0 0 -10px;
+    padding: 0;
+    list-style: none;
+  }
 
-#drop-down ul {
-  display: none;
-  margin: 0 0 0 -10px;
-  padding: 0;
-  list-style: none;
-}
+  #drop-down ul li {
+    float: left;
+    width: 100%;
+    white-space: nowrap; 
+    z-index: 99999; 
+  }
 
-#drop-down ul li {
-  float: left;
-  width: 100%;
-  white-space: nowrap; 
-  z-index: 99999; 
-}
+  #drop-down ul a {
+    display: block;
+    height: 15px;
+    padding:  6px 5px;
+    text-align: left;
+    color: #000000;
+    background: rgba(255, 255, 255, 0.9)
+  }
 
-#drop-down ul a {
-  display: block;
-  height: 15px;
-  padding:  6px 5px;
-  text-align: left;
-  color: #000000;
-  background: rgba(255, 255, 255, 0.9)
-}
+  #drop-down ul a:hover,
+  #drop-down ul a:active  {
+    text-decoration: underline;
+  }
 
-#drop-down ul a:hover,
-#drop-down ul a:active  {
-  text-decoration: underline;
-}
+  #drop-down ul a:visited {
+    color: #000000;
+  }
 
-#drop-down ul a:visited {
-  color: #000000;
-}
+/*Triangles By Dropdown Titles*/
+  .selectOption:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 90%;
+      right: 50%;
+      margin-top: 1px;
+      border-width: 3px 3px 0 3px;
+      border-style: solid;
+      border-color: #000000 transparent;
+  }
