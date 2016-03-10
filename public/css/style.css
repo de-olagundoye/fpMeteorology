@@ -37,6 +37,10 @@
     margin: 0 auto;
   }
 
+  .footer {
+    height: 100px;
+  }
+
   .wrapper{
     position: relative;
     display: block;
@@ -82,7 +86,7 @@
   .close:hover { 
     color: #F9D730; 
   }
-  
+
   #modal {
     visibility: hidden;
     position: fixed;
