@@ -1,6 +1,6 @@
 /*Global Elements*/
   @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
-  @import url(https://fonts.googleapis.com/css?family=Lato:100);
+  @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
   body {
     height: 100%;
@@ -20,6 +20,10 @@
 
   a {
     text-decoration: none;
+  }
+
+  p {
+    font-weight: 
   }
 
   h1 {
