@@ -121,7 +121,7 @@
                   <p ng-if="!clickGirl.name">Click A Name to Find Out!</p>
                   <h2>{{clickGirl.name}}</h2>
                   <h3>{{clickGirl.tag_line}}</h3>
-                  <img src="{{clickGirl.img_src}}">
+                  <img ng-if="clickGirl.img_src" src="{{clickGirl.img_src}}">
                   <p>{{clickGirl.description}}</p>
                 </div>
               </div>
