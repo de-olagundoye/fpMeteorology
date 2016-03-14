@@ -1,0 +1,58 @@
+/*Media Settings for Style Planner Page*/
+  /*For Desktop*/
+  @media (max-width: 1200px) {
+    .masonry {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+    column-count: 4;
+    }
+  }
+  @media (max-width: 1000px) {
+    .masonry {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+    }
+  }
+
+  /*For Tablets*/
+  @media (max-width: 800px) {
+    body {
+      font: 1.25em 'Lato', sans-serif
+    }
+
+    .masonry {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+    }
+
+    .pure-drawer {
+    width: 300px;
+    }
+  }
+
+  /*Mobile Phones*/
+  @media (max-width: 400px) {
+    body {
+      font: 1.5em 'Lato', sans-serif
+    }
+
+    .masonry {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+    }
+
+    #modal img {
+      margin: 0 auto;
+      width: 80%;
+      height: 80%;
+      background: #fff;
+      padding: .5em;
+    }
+
+    .pure-drawer {
+    width: 50%;
+    }
+  }

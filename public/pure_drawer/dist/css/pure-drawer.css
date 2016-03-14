@@ -196,7 +196,7 @@ body {
   width: 100%;
 }
 
-@media only screen and (min-width: 40.063em) {
+/*@media only screen and (min-width: 40.063em) {
   .pure-drawer {
     width: 300px;
   }
@@ -206,7 +206,7 @@ body {
   .pure-drawer {
     width: 300px;
   }
-}
+}*/
 
 .pure-drawer[data-position='right'] {
   left: auto;
