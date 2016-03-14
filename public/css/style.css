@@ -94,6 +94,7 @@
   #modal {
     visibility: hidden;
     position: fixed;
+    overflow-y: scroll;
     top: 0;
     right: 0;
     bottom: 0;
@@ -106,7 +107,7 @@
   }
 
   #modal div {
-    min-width: 70%;
+    min-width: 700px;
     position: relative;
     display: inline-block;
     margin: 10% auto;

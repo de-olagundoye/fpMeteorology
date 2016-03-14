@@ -1,10 +1,10 @@
 /*Parent Div*/
   .queries {
     font-family: 'EB Garamond', serif;
+    font-size: .8em;
     display: block;
     margin: 0 auto;
-    padding-bottom: 50px;
-    font-size: 12px;
+    padding-bottom: 60px;
     text-align: center;
   }
 
@@ -28,7 +28,7 @@
     float: left;
     position: relative;
     margin: 0 10px;
-    width: 80px;
+    width: 125px;
   }
 
   #drop-down li a {
@@ -83,14 +83,14 @@
 
 /*Triangles By Dropdown Titles*/
   .selectOption:after {
-      content: "";
-      width: 0;
-      height: 0;
-      position: absolute;
-      top: 90%;
-      right: 50%;
-      margin-top: 1px;
-      border-width: 3px 3px 0 3px;
-      border-style: solid;
-      border-color: #000000 transparent;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 110%;
+    right: 50%;
+    margin-top: 1px;
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: #000000 transparent;
   }
