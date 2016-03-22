@@ -15,7 +15,7 @@ fpMeteorology uses a number of open source projects to work properly:
 * [express-session] - manages sessions in node.js
 * [jQuery] - forever <3
 
-As well as HTML, CSS, and a normalized Mongo database.
+As well as HTML, CSS, and a normalized MongoDB.
 ### Todos
 
  - User Login
