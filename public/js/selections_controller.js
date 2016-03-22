@@ -33,4 +33,3 @@ function SelectionsController($scope, $http){
     })
   });
 }
-// $(".selectedGirl:first-child").val($(this).text());
