@@ -34,6 +34,7 @@
       <li><a href="" ng-click="page='intro'">What is fpMeteorology?</a></li>
       <li><a href="" ng-click="page='fpGirls'">Who Are the Free People Girls?</a></li>
       <li><a href="" ng-click="page='planner'">fpMeteorology Stylist</a></li>
+      <li><a href="" ng-click="page='login'">Login</a></li>
     </ul>
   </div>
 
@@ -44,7 +45,7 @@
         <div class="header">
           <a href="/"><img id="logo" src="img/logo.png" class="user-select"></a>
         </div>
-        <div ng-switch on='page' class="wrapper">
+        <div ng-switch on="page" class="wrapper">
           <div ng-switch-when="intro">
             <h1>What is fpMeteorology?</h1>
             <p ng-model="page">fpMeteorology was designed to help fpMe users take their inspiration seeking and sharing one step further. With looks categorized by weather, occasion, and personal style, the most loyal Free People girls can now be prepared as well as inspired - rain or shine.</p>
@@ -84,8 +85,7 @@
 
                 <div class="masonry">
                   <div ng-repeat="look in looks | filter:query.weather | filter:query.occasion | filter:query.style">
-                    <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb">
-                    </a>
+                    <a href="" ng-click=show(look)><img src="{{look.img_src}}" class="lookThumb"></a>
                   </div>
                 </div>
               </div>
@@ -130,6 +130,19 @@
               </div>
             </div>
             <div class="footer"></div>
+          </div>
+          <div ng-switch-when="login">
+            <form action="/login" method="post">
+              <div>
+                <label>Email:</label>
+                <input type="text" name="email">   
+              </div>
+              <div>
+                <label>Password:</label>
+                <input type="password" name="password">
+              </div>
+              <button type="submit">Login</button>
+            </form>            
           </div>
         </div>
       </body>

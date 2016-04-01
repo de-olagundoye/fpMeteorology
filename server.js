@@ -86,4 +86,14 @@ app.get('/fp_girls', function(req, res){
   })
 })
 
+app.post('/login', function(req, res) {
+  authenticateUser(req.body.username, req.body.password, function(user) {
+    if(user) {
+      req.session.username = user.username;
+      req.session.password = admin.password_digest;
+    }
+    res.redirect('/');
+  })
+})
+
 app.listen(process.env.PORT || 9292);
