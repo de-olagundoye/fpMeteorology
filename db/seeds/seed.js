@@ -36,14 +36,14 @@ Look.remove({}, function(err) {
 });
 
 
-var u1 = new User({"username": "lindseypengelly", "email": "lindsey@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/Lindseypengelly/"});
-var u2 = new User({"username": "kaciecone", "email": "kaciecone@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile":"http://www.freepeople.com/profile/kaciecone/"});
-var u3 = new User({"username": "katiepossage", "email": "katiepossage@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/katiepossage/"});
-var u4 = new User({"username": "fpk8", "email": "fpk8@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/fpk8/"});
-var u5 = new User({"username": "shleeeeeeeeee", "email": "shleeeeeeeeee@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/Shleeeeeeeeee/"})
-var u6 = new User({"username": "kennedydstearns", "email": "kennedydstearns@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/kennedydstearns/"})
-var u7 = new User({"username": "indiesunshine", "email": "indiesunshine@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/indiesunshine/"})
-var u8 = new User({"username": "FPLivTaylor", "email": "FPLivTaylor@fpmeteor.com", "password_digest": "$2a$08$DSeog8LowcZzbDz3YhUR/OUd6WPGdEj4KqvTsOa0N/Z3ELYG9qJCO7", "fpme_profile": "http://www.freepeople.com/profile/FPLivTaylor/"})
+var u1 = new User({"username": "lindseypengelly", "email": "lindsey@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/Lindseypengelly/"});
+var u2 = new User({"username": "kaciecone", "email": "kaciecone@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile":"http://www.freepeople.com/profile/kaciecone/"});
+var u3 = new User({"username": "katiepossage", "email": "katiepossage@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/katiepossage/"});
+var u4 = new User({"username": "fpk8", "email": "fpk8@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/fpk8/"});
+var u5 = new User({"username": "shleeeeeeeeee", "email": "shleeeeeeeeee@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/Shleeeeeeeeee/"})
+var u6 = new User({"username": "kennedydstearns", "email": "kennedydstearns@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/kennedydstearns/"})
+var u7 = new User({"username": "indiesunshine", "email": "indiesunshine@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/indiesunshine/"})
+var u8 = new User({"username": "FPLivTaylor", "email": "FPLivTaylor@fpmeteor.com", "password_digest": "$2a$08$GDfggzXR23mfSbRYdb38u.IgtEbKVm1j.ph.PT4bNKbaHAJERZPrq", "fpme_profile": "http://www.freepeople.com/profile/FPLivTaylor/"})
 
 u1.save();
 u2.save();

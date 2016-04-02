@@ -32,8 +32,9 @@ app.use(session({
   saveUninitialized: true
 }));
 
-var authenticateUser = function(email, password, callback) {
-  User.findOne({email: email}, function(err, data) {
+var authenticateUser = function(username, password, callback) {
+  Users.findOne({username: username}, function(err, data) {
+    console.log(data)
     if (err) {throw err;}
     bcrypt.compare(password, data.password_digest, function(err, passwordsMatch) {
       if (passwordsMatch) {
@@ -86,11 +87,15 @@ app.get('/fp_girls', function(req, res){
   })
 })
 
+app.get('/login', function(req, res){
+  res.render('index')
+})
+
 app.post('/login', function(req, res) {
   authenticateUser(req.body.username, req.body.password, function(user) {
     if(user) {
       req.session.username = user.username;
-      req.session.password = admin.password_digest;
+      req.session.password = user.password_digest;
     }
     res.redirect('/');
   })
