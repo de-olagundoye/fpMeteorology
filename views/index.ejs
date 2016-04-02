@@ -21,9 +21,11 @@
   <script src="js/looks_controller.js"></script>
   <script src="js/selections_controller.js"></script>
   <script src="js/fp_girls_controller.js"></script>
+  <script src="js/authentication_controller.js"></script>
 </head>
 
-<div class="pure-container" data-effect="pure-effect-reveal">
+
+<div class="pure-container" data-effect="pure-effect-reveal" ng-controller="AuthenticationController">
   <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left">
   <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left">
     <span class="pure-toggle-icon"></span>
@@ -34,7 +36,7 @@
       <li><a href="" ng-click="page='intro'">What is fpMeteorology?</a></li>
       <li><a href="" ng-click="page='fpGirls'">Who Are the Free People Girls?</a></li>
       <li><a href="" ng-click="page='planner'">fpMeteorology Stylist</a></li>
-      <li><a href="" ng-click="page='login'">Login</a></li>
+      <li ng-if="loggedIn"><a href="" ng-click="page='login'">Login</a></li>
     </ul>
   </div>
 
@@ -150,5 +152,4 @@
   </div>
   <label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label>
 </div>
-
 </html>

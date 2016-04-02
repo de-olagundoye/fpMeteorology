@@ -58,6 +58,15 @@ app.get('/', function (req, res) {
   res.render('index');
 });
 
+app.get('/checklogin',function(req,res){
+  if (req.session) {
+    res.send(true);
+  }
+  else {
+    res.send(false);
+  }
+});
+
 app.get('/looks', function(req, res){
   Looks.find({})
     .populate('user')
@@ -88,7 +97,7 @@ app.get('/fp_girls', function(req, res){
 })
 
 app.get('/login', function(req, res){
-  res.render('index')
+  res.redirect('/')
 })
 
 app.post('/login', function(req, res) {
@@ -99,6 +108,14 @@ app.post('/login', function(req, res) {
     }
     res.redirect('/');
   })
+})
+
+app.get('/logout', function(req, res) {
+  req.session.username = null;
+  req.session.password = null;
+  req.session.id = null;
+  console.log(req.session.username)
+  res.redirect('/');
 })
 
 app.listen(process.env.PORT || 9292);
