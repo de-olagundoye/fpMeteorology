@@ -73,6 +73,11 @@
   .lookThumb {
     width: 100% !important;
     height: auto !important;
+    opacity: .85;
+  }
+
+  .lookThumb:hover{
+    opacity: 1;
   }
 
 /*Style Planner Modal*/

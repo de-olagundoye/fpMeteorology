@@ -4,10 +4,9 @@ function AuthenticationController($scope, $http, $rootScope){
   $scope.isLoggedIn = function() {
     $http.get('/checklogin').
       success(function(data) {
-      console.log(data)
-      $rootScope.loggedIn = data;
-    }).error(function(data) {
-      console.log('ERROR:' + data)
-    })
-  }
+        if (data === "true"){
+          $rootScope.loggedIn = data;
+        }
+    });
+  };
 }
