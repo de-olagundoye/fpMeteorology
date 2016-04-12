@@ -59,7 +59,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/checklogin',function(req,res){
-  if (req.session) {
+  if (req.session.username) {
     res.send(true);
   }
   else {
@@ -114,7 +114,7 @@ app.get('/logout', function(req, res) {
   req.session.username = null;
   req.session.password = null;
   req.session.id = null;
-  console.log(req.session.username)
+  console.log(req.session)
   res.redirect('/');
 })
 

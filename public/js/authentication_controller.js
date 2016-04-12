@@ -1,12 +1,12 @@
-angular.module('fpMeteorology').controller('AuthenticationController', AuthenticationController);
+angular.module('fpMeteorology').controller('AuthenticationsController', AuthenticationsController);
 
-function AuthenticationController($scope, $http, $rootScope){
-  $scope.isLoggedIn = function() {
-    $http.get('/checklogin').
-      success(function(data) {
-        if (data === "true"){
-          $rootScope.loggedIn = data;
-        }
-    });
-  };
+function AuthenticationsController($scope, $http, $rootScope){
+  $http.get('/checklogin').success(function(response) {
+    if (response){
+      $scope.loggedIn = response;
+      console.log(response)
+    } else {
+      console.log("logged out")
+    }
+  });
 }
