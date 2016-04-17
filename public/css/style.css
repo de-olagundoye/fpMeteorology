@@ -22,10 +22,6 @@
     text-decoration: none;
   }
 
-  p {
-    font-weight: 
-  }
-
   h1 {
     text-align: center
   }
@@ -71,8 +67,8 @@
   }
 
   .lookThumb {
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: auto;
     opacity: .85;
   }
 
